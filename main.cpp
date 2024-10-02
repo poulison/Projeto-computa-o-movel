@@ -1,3 +1,6 @@
+//Paulo Andre de Oliveira Hirata RA: 24.123.086-1
+//Victor Merker Binda RA: 24.223.086-0
+
 #include <LiquidCrystal.h>
 #define NOTE_B0  31
 #define NOTE_C1  33
@@ -174,6 +177,7 @@ void iniciarJogo() {
     delay(1000);
 
     for (int i = 0; i < tamanho; i++) {
+      randomSeed(analogRead(0));
         memoria[i] = random(2); 
     }
 
@@ -247,6 +251,7 @@ void iniciarJogo() {
         if (memoriausu[b] != memoria[b]) {
             lcd_1.clear();
             lcd_1.print("Errou!");
+          	musicaerro();
             delay(1000);
             erro = true;
             reiniciarJogo(); // Reinicia o jogo em caso de erro
@@ -257,6 +262,7 @@ void iniciarJogo() {
     if (!erro) {
         lcd_1.clear();
         lcd_1.print("Parabens!");
+      musicaerro();
         delay(1000);
     }
 
@@ -536,7 +542,8 @@ void reiniciarJogo() {
 
 void embaralharPerguntas() {
     for (int i = 0; i < numeroDePerguntas; i++) {
-        int j = random(i + 1);
+        randomSeed(analogRead(0));
+      	int j = random(i + 1);
         String tempPergunta = perguntas[i];
         perguntas[i] = perguntas[j];
         perguntas[j] = tempPergunta;
