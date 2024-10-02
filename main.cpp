@@ -193,10 +193,18 @@ void iniciarJogo() {
     delay(4000);
     
     
-    
+    //fiz o while para so tomar um ação depois que aperta algum botao
     while (true) {
         int botaosim = digitalRead(8);
         int botaonao = digitalRead(10);
+      int estadoBotaoStart = digitalRead(botaostart);
+      int chance= 0;
+          
+          	
+          	if (estadoBotaoStart == LOW) {
+            reiniciarJogo();
+            return; // Sai da função para interromper o fluxo atual e reiniciar o jogo
+        }
         
         unsigned long tempoAtual = millis(); // Armazena o tempo atual
         
@@ -230,14 +238,36 @@ void iniciarJogo() {
         }
 
         // Verifica se o tempo acabou (10 segundos)
-        if (segundos >= 10) {
-            lcd_1.clear();
-            lcd_1.print("acabou o tempo");
-            delay(1000);
-            reiniciarJogo(); // Reinicia o jogo se o tempo esgotar
-            return; // Sai da função inteira para reiniciar o jogo
-        }
-    }
+         if (segundos >= 10) {
+                lcd_1.clear();
+                lcd_1.print("acabou o tempo");
+                delay(1000);
+                lcd_1.clear();
+                lcd_1.print("so tem mais");
+                lcd_1.setCursor(0, 1);
+                lcd_1.print("uma chance");
+                delay(1000);
+                chance++;
+                break;
+            }
+
+            if (chance == 2) {
+                lcd_1.clear();
+                lcd_1.print("acabou as");
+                lcd_1.setCursor(0, 1);
+                lcd_1.print("chances");
+                delay(1000);
+                reiniciarJogo(); // Reinicia o jogo se o tempo esgotar
+                return; // Sai da função inteira para reiniciar o jogo
+            }
+          
+          
+          
+          
+          }
+            
+       
+    
         
     if(respusua[i]==respostas[i] && respostas[i]=="Sim"){
       lcd_1.clear();
@@ -264,8 +294,6 @@ void iniciarJogo() {
     delay(1000);
       reiniciarJogo();
           	return;
-     
-    
     }
         if(respusua[i]!=respostas[i] && respusua[i]=="Nao"){
       lcd_1.clear();
@@ -277,14 +305,17 @@ void iniciarJogo() {
           	return;
      
     }
-        
-      
-      
-      }
-  
-  
+   }
+  ]lcd_1.clear();
+    lcd_1.print("Prabens voce ");
+    lcd_1.setCursor(0, 1);
+    lcd_1.print("acertou tudo");
+    delay(1000);
+    reiniciarJogo();
   
 }
+
+
 
 void reiniciarJogo() {
      lcd_1.clear();
