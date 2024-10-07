@@ -10,6 +10,6 @@ Nossos objetivos e detalhes com cada jogo são:
   -A última fase deve ser uma pergunta fixa
   -Ao ganhar o jogo uma música será tocada
 
-##Jogo da memória
+## Jogo da memória
 
 Os controles do jogo são dois botões que representam os inputs necessários para o jogo, dois leds um da cor vermelho e outra da cor verde, o buzzer para tocar os sons, músicas, alem do dysplay LCD
