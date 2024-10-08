@@ -1,4 +1,4 @@
-# Projeto-computação-movel
+# Projeto computação movel
 
 O nosso projeto tem como objetivo fazer um jogo da memória e de perguntas e respostas usando o arduino UNO como nossa plataforma usando o Display LCD.
 Nossos objetivos e detalhes com cada jogo são:
