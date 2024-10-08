@@ -21,7 +21,7 @@ Alguns detalhes dos jogos são:
 
  O jogo de perguntas compõe as fases finais do jogo, tendo seus controles compostos também por dois botões, porém dessa vez uma representa o "sim" e o outro o "não". A tela do display exibirá por um curto período uma pergunta simples e logo em seguida as opções de resposta para ela (sim ou não) e um timer que contará o tempo disponível para responder à questão, 10 segundos. O jogo será composto por 5 perguntas selecionadas aleatoriamente. Caso todas sejam respondidas corretamente, o jogo irá avançar para seu estágio final, que se trata de uma pergunta fixa que determinará se o jogo foi vencido ou perdido. Cada pergunta deveram ser respondidas dentro de 10 segundos, aos 6 segundos um som será tocado para alertar do iminente fim do tempo, e caso o tempo se esgote, na primeira vez que o tempo acabar a questão será pulada dando uma segunda chance para o jogador, mas caso o tempo se esgote por uma segunda vez o jogo será perdido e reiniciado.
 
-##Metodologia
+## Metodologia
 
 ### Lista de materiais completa com suas funçoes:
 
@@ -38,7 +38,7 @@ Alguns detalhes dos jogos são:
 - Display LCD 16x2
 > Exibição de mensagens do jogo como a introdução, informações gerais, perguntas do jogo, timer e etc.
 
-###Desenvolvimento
+### Desenvolvimento
 
   Para do desenvolvimento do projeto usamos principalmente o Tinkercad e o GitHub, o desenvolvimento bruto total além dos testes, foram feitos pelo Tinkercad pela interface que contribuia grandemente com o desenvolvimento por nos possibilitar de fazer simulações com o Arduíno em si sem nem mesmo termos ele em mãos, e o GitHub para conseguirmos desenvolver o codigo individualmente além de salvar o progresso feito durante a duração do projeto. O código comentado está disponível no arquivo main.cpp aqui no GitHub.
 
