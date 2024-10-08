@@ -1,7 +1,10 @@
 //Paulo Andre de Oliveira Hirata RA: 24.123.086-1
 //Victor Merker Binda RA: 24.223.086-0
 
+// Inclui a biblioteca para o LCD
 #include <LiquidCrystal.h>
+
+// Define constantes para as notas musicais
 #define NOTE_B0  31
 #define NOTE_C1  33
 #define NOTE_CS1 35
@@ -94,23 +97,25 @@
 #define PAUSE 0
 
 
-int segundos2 = 0;
-int segundos = 0;
-int vermelho = 6;
-int verde = 7;
-int botaostart = 9;
-int buzzer = 13;
-const int tamanho = 10;
-const int numeroDePerguntas = 5;
-int memoria[tamanho];
-int ligaled = 0;
-int indsequeusuario = 0;
-int memoriausu[tamanho];
-int contagemseq = 0;
-const int tamanhoquest = 9;
-bool jogoAtivo = false; // Variável para controlar o estado do jogo
-bool erro = false;      // Variável global para verificar erros
-// Declaração de arrays de perguntas e respostas
+// Variáveis globais
+int segundos2 = 0; // Contador para o tempo da segunda parte
+int segundos = 0;  // Contador para o tempo da primeira parte
+int vermelho = 6;  // Pino do LED vermelho
+int verde = 7;     // Pino do LED verde
+int botaostart = 9; // Pino do botão de iniciar
+int buzzer = 13;   // Pino do buzzer
+const int tamanho = 10; // Tamanho do array de memória
+const int numeroDePerguntas = 5; // Número de perguntas
+int memoria[tamanho]; // Array para armazenar a sequência de LEDs
+int ligaled = 0; // Controle do estado da LED
+int indsequeusuario = 0; // Indica a resposta do usuário
+int memoriausu[tamanho]; // Array para armazenar as respostas do usuário
+int contagemseq = 0; // Contador de sequência
+const int tamanhoquest = 9; // Número total de perguntas
+bool jogoAtivo = false; // Controla o estado do jogo
+bool erro = false; // Controla se houve erro
+
+// Declaração de array de perguntas
 String perguntas[tamanhoquest] = {
     "Neymar joga bola?",
     "A terra e plana?",
@@ -123,6 +128,7 @@ String perguntas[tamanhoquest] = {
     "Fogo cura ferida?"
 };
 
+// Declaração do array de respostas
 String respostas[tamanhoquest] = {
     "Sim",
     "Nao",
@@ -134,21 +140,21 @@ String respostas[tamanhoquest] = {
     "Nao",
     "Nao"
 };
-String respusua[numeroDePerguntas];
-LiquidCrystal lcd_1(12, 11, 5, 4, 3, 2);
+String respusua[numeroDePerguntas];//array que armazena as respostas do usuario
+LiquidCrystal lcd_1(12, 11, 5, 4, 3, 2);//inicia LCD
 
 void setup() {
-    pinMode(vermelho, OUTPUT);
-    pinMode(verde, OUTPUT);
-    pinMode(10, INPUT_PULLUP);
-    pinMode(8, INPUT_PULLUP);
-    pinMode(botaostart, INPUT_PULLUP);
-    pinMode(buzzer, OUTPUT);
+   pinMode(vermelho, OUTPUT); // Configura o LED vermelho como saída
+    pinMode(verde, OUTPUT); // Configura o LED verde como saída
+    pinMode(10, INPUT_PULLUP); // Configura pino 10 como entrada com resistor pull-up
+    pinMode(8, INPUT_PULLUP); // Configura pino 8 como entrada com resistor pull-up
+    pinMode(botaostart, INPUT_PULLUP); // Configura o botão de iniciar como entrada com pull-up
+    pinMode(buzzer, OUTPUT); // Configura o buzzer como saída
 
-    lcd_1.begin(16, 2); 
-    lcd_1.print("Seja bem vindo!");
-    lcd_1.setCursor(0, 1);
-    lcd_1.print("Pressione iniciar");
+    lcd_1.begin(16, 2); // Inicializa o LCD com 16 colunas e 2 linhas
+    lcd_1.print("Seja bem vindo!"); // Exibe mensagem de boas-vindas
+    lcd_1.setCursor(0, 1); // Move o cursor para a segunda linha
+    lcd_1.print("Pressione iniciar"); // Instrui o usuário a pressionar iniciar
 }
 
 void loop() {
@@ -166,21 +172,22 @@ void loop() {
     }
 }
 
+// Função que inicia o jogo
 void iniciarJogo() {
-    lcd_1.clear();
-    lcd_1.print("Jogo Iniciado");
-    delay(1000);
-    lcd_1.clear();
-    lcd_1.print("Memorize as cores");
-    lcd_1.setCursor(0, 1);
-    lcd_1.print("dos LEDs");
-    delay(1000);
+    lcd_1.clear(); // Limpa o LCD
+    lcd_1.print("Jogo Iniciado"); // Indica que o jogo começou
+    delay(1000); // Espera 1 segundo
+    lcd_1.clear(); // Limpa o LCD novamente
+    lcd_1.print("Memorize as cores"); // Instrui o usuário a memorizar as cores
+    lcd_1.setCursor(0, 1); // Move o cursor para a segunda linha
+    lcd_1.print("dos LEDs"); // Exibe mensagem sobre os LEDs
+    delay(1000); // Espera 1 segundo
 
+    // Gera uma sequência aleatória de LEDs
     for (int i = 0; i < tamanho; i++) {
-      randomSeed(analogRead(0));
-        memoria[i] = random(2); 
+        randomSeed(analogRead(0)); // Inicializa o gerador de números aleatórios
+        memoria[i] = random(2); // Gera um número aleatório (0 ou 1) e armazena em memória
     }
-
     for (int i = 0; i < tamanho; i++) {
       
         if (memoria[i] == 0) {
@@ -522,44 +529,44 @@ void iniciarJogo() {
 
 
 void reiniciarJogo() {
-     lcd_1.clear();
-    lcd_1.print("Reiniciando...");
-    delay(1000);
-    
+    lcd_1.clear(); // Limpa o LCD para uma nova mensagem
+    lcd_1.print("Reiniciando..."); // Exibe a mensagem de reinício
+    delay(1000); // Espera 1 segundo para que o usuário veja a mensagem
+
     // Resetar variáveis de controle do jogo
-    contagemseq = 0;         // Zera a contagem da sequência
+    contagemseq = 0; // Zera a contagem da sequência, preparando para um novo jogo
     for (int i = 0; i < tamanho; i++) {
-        memoriausu[i] = 0;   // Zera a sequência de entrada do usuário
-        memoria[i] = 0;      // Opcional: Zera a sequência gerada
+        memoriausu[i] = 0; // Zera a sequência de entrada do usuário, limpando as respostas
+        memoria[i] = 0; // Opcional: Zera a sequência gerada, para não manter dados antigos
     }
-    segundos = 0;            // Zera o contador de tempo
-    jogoAtivo = false;       // Marca que o jogo está inativo
-    erro = false;            // Resetar a flag de erro
+    segundos = 0; // Zera o contador de tempo, garantindo que não haja tempo acumulado de jogos anteriores
+    jogoAtivo = false; // Marca que o jogo está inativo, permitindo que seja reiniciado
+    erro = false; // Resetar a flag de erro, preparando para um novo jogo sem erros anteriores
     
-    lcd_1.clear();
-    lcd_1.print("Pressione iniciar");
+    lcd_1.clear(); // Limpa o LCD novamente
+    lcd_1.print("Pressione iniciar"); // Instrui o usuário a pressionar o botão de iniciar
 }
 
 void embaralharPerguntas() {
     for (int i = 0; i < numeroDePerguntas; i++) {
-        randomSeed(analogRead(0));
-      	int j = random(i + 1);
-        String tempPergunta = perguntas[i];
-        perguntas[i] = perguntas[j];
-        perguntas[j] = tempPergunta;
+        randomSeed(analogRead(0)); // Inicializa o gerador de números aleatórios com uma leitura analógica
+        int j = random(i + 1); // Gera um índice aleatório entre 0 e i
+        String tempPergunta = perguntas[i]; // Armazena a pergunta atual em uma variável temporária
+        perguntas[i] = perguntas[j]; // Troca a pergunta atual com a pergunta em j
+        perguntas[j] = tempPergunta; // Finaliza a troca
 
-        String tempResposta = respostas[i];
-        respostas[i] = respostas[j];
-        respostas[j] = tempResposta;
+        String tempResposta = respostas[i]; // Armazena a resposta atual em uma variável temporária
+        respostas[i] = respostas[j]; // Troca a resposta atual com a resposta em j
+        respostas[j] = tempResposta; // Finaliza a troca
     }
 }
 
 void selecionarPerguntas() {
-    String perguntasSelecionadas[numeroDePerguntas];
+    String perguntasSelecionadas[numeroDePerguntas];// Cria um array para armazenar as perguntas selecionadas
     String respostasSelecionadas[numeroDePerguntas];
 
     for (int i = 0; i < numeroDePerguntas; i++) {
-        perguntasSelecionadas[i] = perguntas[i];
+        perguntasSelecionadas[i] = perguntas[i];// Copia as perguntas para o array selecionado
         respostasSelecionadas[i] = respostas[i];
     }
 }
