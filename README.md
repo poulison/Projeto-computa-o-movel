@@ -1,6 +1,6 @@
 # Projeto computação movel
 
-##Introdução
+## Introdução
 O nosso projeto visa fazer um jogo da memória e de perguntas e respostas usando o Arduíno UNO como nossa plataforma, além do uso do Tinkercad como ferramenta para produzirmos o código do jogo, além de executar simulações.
 Alguns detalhes dos jogos são:
   - O jogo procura testar a memória do jogador.
