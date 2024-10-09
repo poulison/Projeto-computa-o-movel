@@ -43,6 +43,11 @@ Alguns detalhes dos jogos são:
   Para do desenvolvimento do projeto usamos principalmente o Tinkercad e o GitHub, o desenvolvimento bruto total além dos testes, foram feitos pelo Tinkercad pela interface que contribuia grandemente com o desenvolvimento por nos possibilitar de fazer simulações com o Arduíno em si sem nem mesmo termos ele em mãos, e o GitHub para conseguirmos desenvolver o codigo individualmente além de salvar o progresso feito durante a duração do projeto. O código comentado está disponível no arquivo [main.cpp](https://github.com/poulison/Projeto-computa-o-movel/blob/main/main.cpp) aqui no GitHub.
 
 
+### Sistema
+![image](https://github.com/user-attachments/assets/1263a761-5ebe-4989-817f-328af6170d91)
+
+
+
 
 
 
