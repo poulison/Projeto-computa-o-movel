@@ -49,7 +49,7 @@ Alguns detalhes dos jogos são:
 ### Link do video explicativo jogo da memoria
 https://youtu.be/IzsHCu3cnhY
 
-### Link do video explicativo jogo da mo Quiz
+### Link do video explicativo do Quiz
 https://youtu.be/l0hXWMcZf6w
 
 
