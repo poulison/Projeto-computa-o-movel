@@ -46,6 +46,11 @@ Alguns detalhes dos jogos são:
 ### Sistema
 ![image](https://github.com/user-attachments/assets/1263a761-5ebe-4989-817f-328af6170d91)
 
+### Link do video explicativo jogo da memoria
+https://youtu.be/IzsHCu3cnhY
+
+###Link do video explicativo jogo da mo Quiz
+https://youtu.be/l0hXWMcZf6w
 
 
 
