@@ -19,7 +19,7 @@ Alguns detalhes dos jogos são:
 
 ## Jogo de perguntas
 
- O jogo de perguntas compõe as fases finais do jogo, tendo seus controles compostos também por dois botões, porém dessa vez uma representa o "sim" e o outro o "não". A tela do display exibirá por um curto período uma pergunta simples e logo em seguida as opções de resposta para ela (sim ou não) e um timer que contará o tempo disponível para responder à questão, 10 segundos. O jogo será composto por 5 perguntas selecionadas aleatoriamente. Caso todas sejam respondidas corretamente, o jogo irá avançar para seu estágio final, que se trata de uma pergunta fixa que determinará se o jogo foi vencido ou perdido. Cada pergunta deveram ser respondidas dentro de 10 segundos, aos 6 segundos um som será tocado para alertar do iminente fim do tempo, e caso o tempo se esgote, na primeira vez que o tempo acabar a questão será pulada dando uma segunda chance para o jogador, mas caso o tempo se esgote por uma segunda vez o jogo será perdido e reiniciado.
+   O jogo de perguntas compõe as fases finais do jogo, tendo seus controles compostos também por dois botões, porém dessa vez uma representa o "sim" e o outro o "não". A tela do display exibirá por um curto período uma pergunta simples e logo em seguida as opções de resposta para ela (sim ou não) e um timer que contará o tempo disponível para responder à questão, 10 segundos. O jogo será composto por 5 perguntas selecionadas aleatoriamente. Caso todas sejam respondidas corretamente, o jogo irá avançar para seu estágio final, que se trata de uma pergunta fixa que determinará se o jogo foi vencido ou perdido. Cada pergunta deveram ser respondidas dentro de 10 segundos, aos 6 segundos um som será tocado para alertar do iminente fim do tempo, e caso o tempo se esgote, na primeira vez que o tempo acabar a questão será pulada dando uma segunda chance para o jogador, mas caso o tempo se esgote por uma segunda vez o jogo será perdido e reiniciado.
 
 ## Metodologia
 
@@ -51,6 +51,16 @@ https://youtu.be/IzsHCu3cnhY
 
 ### Link do video explicativo do Quiz
 https://youtu.be/l0hXWMcZf6w
+
+
+
+
+
+
+
+## Conclusão
+
+  Para a resolução do problema proposto nos ultilizamos de base varios exercicios que fizemos durante o semestre nas aulas das materias alem de inspirações de exemplos de aula e tutoriais na internet para fazermos as funções necessárias, o desenvolvimento em si foi dividido em partes focando individualmente a cada função e as testanto para facilitar a correção de erros caso necessário além de focarmos em terminar pelo menos uma função por dia no minímo, usamos um loop para cada fase do jogo para que pudessemos facilitar o processo ciclico além de reiniciar o jogo quando possivel. Utilizamos do github para registrar nosso avanço 
 
 
 
