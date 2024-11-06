@@ -1,5 +1,9 @@
 # Projeto computação movel
 
+## Desenvolvedores
+- Paulo Andre de Oliveira Hirata
+- Victor Merker Binda
+
 ## Introdução
 O nosso projeto visa fazer um jogo da memória e de perguntas e respostas usando o Arduíno UNO como nossa plataforma, além do uso do Tinkercad como ferramenta para produzirmos o código do jogo, além de executar simulações.
 Alguns detalhes dos jogos são:
